@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Buttom</title>
+    <link rel="stylesheet" href="css/style.css" >
+</head>
+<body>
+
+<div class="btn-submit">
+    <span>Submit</span>
+    <div class="rotate"></div>
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    (function () {
+        $(document).on('click', '.btn-submit', function() {
+            if(!$(this).hasClass('loading')){
+                $(this).addClass('loading');
+                let self = this;
+
+                setTimeout(function() {
+                    $(self).removeClass('loading');
+                    $(self).addClass('checked');
+                },1500);
+
+                setTimeout(function() {
+                    $(self).removeClass('checked');
+                }, 3000);
+            }
+        });
+    })();
+</script>
+</body>
+</html>
